@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        listItem(name: "Coconut Water", description: "Refreshingly Fresh", imageURLs: nil)
+        EbayAPI.listItem(name: "Apple Watch", description: "Innovation, At Its Finest", imageURLs: ["https://as-images.apple.com/is/image/AppleInc/aos/published/images/a/pp/apple/watch/apple-watch-og-hero-201809?wid=1200&hei=630&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1536762554360".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!])
+        //listItem(name: "Coconut Water", description: "Refreshingly Fresh", imageURLs: nil)
     }
     
     /// listItem will list a given item to ebay
