@@ -15,13 +15,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        listItem(name: "Coconut Water", description: "Refreshingly Fresh", image: nil)
+        listItem(name: "Coconut Water", description: "Refreshingly Fresh", imageURLs: nil)
     }
     
-    func listItem(name: String, description: String, image: UIImage!) {
+    /// listItem will list a given item to ebay
+    ///
+    /// Note: imageURLs must contain encoded strings.
+    /// To encode a string, run addingPercentEncoding
+    ///
+    ///     "https://somelink.com".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+    ///
+    /// - parameters:
+    ///     - name: The name of the item
+    ///     - description: The description of the item
+    ///     - imageURLs: an array of urls that hold pictures of the image. URLS MUST BE ENCODED
+    ///                    to encode a string, look at the code above
+    func listItem(name: String, description: String, imageURLs: [String]!) {
         let sku = name.replacingOccurrences(of: " ", with: "") + "\(Int.random(in: 10..<9999))"//(name + UUID().uuidString).replacingOccurrences(of: " ", with: "")
         self.createInventoryLocation(sku: sku, productName: name, productDescription: description, price: 10.50)
-        
 //        createOffer(sku: sku, productDescription: description, price: 10.50) // this will also call publishOffer
     }
     
